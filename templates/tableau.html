@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Transitive by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Heart Disease Analysis - Behind the Scene</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+
+
+	</head>
+	<body class="subpage">
+			<div class="tableau">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="{{ url_for('tableau') }}">Heart Disease Analysis <span>- Behind the Scene</span></a></div>
+				<a href="#menu" class="toggle"><span>Menu</span></a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+						<li><a href="{{ url_for('home') }}">Home</a></li>
+						<li><a href="{{ url_for('graph1') }}">Tableau</a></li>
+						<li><a href="{{ url_for('graph2') }}">Tree Models</a></li>
+						<li><a href="{{ url_for('tableau') }}">Logistics Regression And KNN</a></li>
+						<li><a href="{{ url_for('quiz') }}">Quiz</a></li>
+	
+	
+			</nav>
+
+		<!-- One -->
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div class="box">
+						
+						<div class="content">
+							<header class="align-center">
+								<h2>Logistics Regression</h2>
+								<!-- <p>maecenas feugiat ex purus, quis volutpat lacus placerat</p> -->
+							</header>
+							<hr />
+							<header class="align-center">
+									<h3>Explored the data.</h3>
+									<!-- <p>maecenas feugiat ex purus, quis volutpat lacus placerat</p> -->
+							</header>
+							<p>The original dataset.</p>
+							<div class="image fit">
+									<img src="{{ url_for('static', filename='images/dataset.png') }}" alt="" />
+							</div>
+							<hr>
+							<p>The distributions of the qantitative variables.</p>
+							<div class="image fit">
+								<img src="{{ url_for('static', filename='images/graph.png') }}" alt="" />
+							</div>
+							<hr>
+							<header class="align-center">
+									<h3>Applied transformations to the skewed qantitative variables.</h3>
+									
+							</header>
+							<div class="image fit">
+								<img src="{{ url_for('static', filename='images/age.png') }}" alt="" />
+								<img src="{{ url_for('static', filename='images/trestbps.png') }}" alt="" />
+								<img src="{{ url_for('static', filename='images/chol.png') }}" alt="" />
+								<img src="{{ url_for('static', filename='images/thalach.png') }}" alt="" />
+								<img src="{{ url_for('static', filename='images/oldpeak.png') }}" alt="" />
+							</div>
+							<hr>
+							<header class="align-center">
+									<h3>Dummy variable to qualitative variables.</h3>
+									
+							</header>
+							<div class="image fit">
+									<img src="{{ url_for('static', filename='images/dummy.png') }}" alt="" />
+
+								</div>
+							<hr>
+							<header class="align-center">
+									<h3>Fitted Logistics Regression Model.</h3>
+									<!-- <p>maecenas feugiat ex purus, quis volutpat lacus placerat</p> -->
+							</header>
+							<div class="image fit">
+								<img src="{{ url_for('static', filename='images/lr.png') }}" alt="" />
+							</div>
+							<hr>
+							<h5>Confusion Matrix</h5>
+							<div class="image fit">
+									<img src="{{ url_for('static', filename='images/conf_matrix.png') }}" alt="" />
+							</div>
+							<hr>
+							<h5>Classification Matrix</h5>
+							<div class="image fit">
+								<img src="{{ url_for('static', filename='images/clas_matrix.png') }}" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section id="two" class="wrapper style2">
+					<div class="inner">
+						<div class="box">
+							
+							<div class="content">
+								<header class="align-center">
+									<h2>KNN</h2>
+									<!-- <p>maecenas feugiat ex purus, quis volutpat lacus placerat</p> -->
+								</header>
+								<hr />
+								<header class="align-center">
+										<h3>Fitted KNN Model with standardized quantitative variables and dummy qualitative variables.</h3>
+										<!-- <p>maecenas feugiat ex purus, quis volutpat lacus placerat</p> -->
+								</header>
+								<div class="image fit">
+									<img src="{{ url_for('static', filename='images/knn.png') }}" alt="" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+
+		
+
+		<!-- Scripts -->
+		<script src="{{ url_for('static', filename='js/jquery.min.js') }}" ></script>
+		<script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<!--
+	Transitive by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Heart Disease UCI</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+	</head>
+	<body>
+		<div class="quiz">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				
+				<a href="#menu" class="toggle"><span>Menu</span></a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('graph1') }}">Tableau</a></li>
+                        <li><a href="{{ url_for('graph2') }}">Tree Models</a></li>
+                        <li><a href="{{ url_for('tableau') }}">Logistics Regression And KNN</a></li>
+                        <li><a href="{{ url_for('quiz') }}">Quiz</a></li>
+    
+    
+				</ul>
+			</nav>
+
+		<!-- One -->
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div>
+						<div class="content">
+							<div class="image fit2">
+								<img class="center" height=320 src="{{ url_for('static', filename='images/find-share-on-giphy.gif') }}" alt=""/>
+							</div>
+						</div>
+					</div>
+					<br>
+							<div class="content">
+									<h2 class="align-center">Start The Quiz</h2>
+									<hr />
+									<form action="/predict" method="POST">
+										<div class="field half">
+											<label for="age">Age</label>
+											<input name="age" id="age" type="text" placeholder="Input should be an integer value.">
+										</div>
+										<div class="field half">
+											<label for="sex">Sex</label>
+											<div class="select-wrapper">
+												<select name="sex" id="sex">
+													<option value="">- Gender -</option>
+													<option value="0">Female</option>
+													<option value="1">Male</option>
+												</select>
+											</div>
+										</div>
+										<div class="field half">
+											<label for="cp">Chest Pain Type</label>
+											<div class="select-wrapper">
+												<select name="cp" id="cp">
+													<option value="">- Chest Pain Type -</option>
+													<option value="0">Typical Angina</option>
+													<option value="1">Atypical Angina</option>
+													<option value="2">Non Anginal Pain</option>
+													<option value="3">Asymptomatic</option>
+												</select>
+											</div>
+										</div>
+										<div class="field half">
+											<label for="trestbps">Resting Blood Pressure (Systolic Pressure)</label>
+											<input name="trestbps" id="trestbps" type="text" placeholder="Input should be an integer value which is in the range of 90 to 250.">
+										</div>
+										<div class="field half">
+											<label for="chol">Serum Cholestoral</label>
+											<input name="chol" id="chol" type="text" placeholder="Input should be an integer value which is in the range of 125 to 800.">
+										</div>
+										<div class="field half">
+											<label for="fbs">Fasting Blood Sugar</label>
+											<div class="select-wrapper">
+												<select name="fbs" id="fbs">
+													<option value="">- Fasting Blood Sugar > 120mg/dl -</option>
+													<option value="0">False</option>
+													<option value="1">True</option>
+												</select>
+											</div>
+										</div>
+										<div class="field half">
+											<label for="restecg">Resting Electrocardiographic Results</label>
+											<div class="select-wrapper">
+												<select name="restecg" id="restecg">
+													<option value="">- Resting Electrocardiographic Results -</option>
+													<option value="0">Normal</option>
+													<option value="1">Having ST-T Wave Abnormality</option>
+													<option value="2">Showing Probable or Definite Left Ventricular Hypertrophy</option>
+												</select>
+											</div>
+										</div>
+										<div class="field half">
+											<label for="thalach">Maximun Heart Rate Achieved</label>
+											<input name="thalach" id="thalach" type="text" placeholder="Input should be an integer value which is in the range of 50 to 250.">
+										</div>
+										<div class="field half">
+											<label for="exang">Exercise Induced Angina</label>
+											<div class="select-wrapper">
+												<select name="exang" id="exang">
+													<option value="">- Exercise Induced Angina -</option>
+													<option value="0">No</option>
+													<option value="1">Yes</option>
+												</select>
+											</div>
+										</div>
+										<div class="field half">
+											<label for="oldpeak">ST Depression Induced By Exercise Relative To Rest</label>
+											<input name="oldpeak" id="oldpeak" type="text" placeholder="Input should be a float with one decimal which is in the range of 0 to 6.5. ">
+										</div>
+										<div class="field half">
+											<label for="slope">Slope Of The Peak Exercise ST Segment</label>
+											<div class="select-wrapper">
+												<select name="slope" id="slope">
+													<option value="">- Slope Of The Peak Exercise ST Segment -</option>
+													<option value="0">Upsloping</option>
+													<option value="1">Flat</option>
+													<option value="2">Downsloping</option>
+												</select>
+											</div>
+										</div>
+										<div class="field half">
+											<label for="ca">Number Of Major Vessels Colored By Flourosopy</label>
+											<div class="select-wrapper">
+												<select name="ca" id="ca">
+													<option value="">- Number Of Major Vessels Colored By Flourosopy -</option>
+													<option value="0">0</option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+												</select>
+											</div>
+										</div>
+										<div class="field half">
+											<label for="thal">Thalium Stress Test Result</label>
+											<div class="select-wrapper">
+												<select name="thal" id="thal">
+													<option value="">- Thalium Stress Test Result -</option>
+													<option value="1">Normal</option>
+													<option value="2">Fixed Defect</option>
+													<option value="3">Reversible Defect</option>
+													
+												</select>
+											</div>
+										</div>
+
+										<ul class="actions align-center">
+											<li><input value="Get Result" class="button" type="submit" href="#two"></li>
+										</ul>
+									</form>
+				</div>
+			</section>
+
+			
+		<!-- Two -->
+
+        <section id="two" class="wrapper style2">
+            <div class="inner">
+                <div>
+                    <div class="content">
+                        <div class="image fit2">
+                        <img class="center" height=320 src="{{ url_for('static', filename='images/heartbeat.gif') }}" alt=""/>
+                        </div>
+                        </div>
+                    </div>
+                <br>
+                <div class="content">
+                        <h2 class="align-center">Result</h2>
+                        <hr />
+                        <div class="content">
+                                <hr />
+                   			<h1>{{ output }}</h1>
+                                
+                        </div>
+				</div>
+				</div>
+			</div>
+			</section>
+
+		
+
+		<!-- Scripts -->
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}" ></script>
+		<script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+		</div>
+	</body>
+</html>
